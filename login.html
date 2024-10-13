@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Instagram Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,10 +19,14 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
+            width: 350px;
             text-align: center;
-            color: #333;
+        }
+        .instagram-logo {
+            margin-bottom: 20px;
+        }
+        .instagram-logo img {
+            width: 175px; /* Adjust width as needed */
         }
         input[type="text"],
         input[type="password"] {
@@ -31,6 +35,7 @@
             margin: 10px 0;
             border: 1px solid #ddd;
             border-radius: 5px;
+            box-sizing: border-box;
         }
         button {
             width: 100%;
@@ -40,19 +45,40 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 16px;
         }
         button:hover {
             background-color: #2a82d4;
+        }
+        .forgot-password {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #3897f0;
+        }
+        .signup-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .signup-link a {
+            color: #3897f0;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
 <div class="login-container">
-    <h2>Login to Your Account</h2>
-    <input type="text" placeholder="Username" required>
+    <div class="instagram-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+    </div>
+    <h2>Log in to Instagram</h2>
+    <input type="text" placeholder="Phone number, username, or email" required>
     <input type="password" placeholder="Password" required>
     <button type="submit">Log In</button>
+    <a href="#" class="forgot-password">Forgot password?</a>
+    <div class="signup-link">
+        Don't have an account? <a href="#">Sign up</a>
+    </div>
 </div>
 
 </body>
